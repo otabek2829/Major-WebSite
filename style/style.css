@@ -1,0 +1,246 @@
+@import url('./media-query.css');
+@import url('./section.css');
+@import url('./footer.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    background: #000000;
+}
+
+::-webkit-scrollbar {
+    background-color: #000;
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.show {
+    display: flex !important;
+    margin-top: 30px !important;
+    text-align: center;
+}
+
+
+/* NavMenu */
+#navMenu>span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+}
+
+#navMenu>span:not(:last-child) {
+    margin-bottom: 7px !important;
+}
+
+#navMenu,
+#navMenu>span {
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+
+#navMenu.active {
+    transition-delay: 0.8s;
+    transform: rotate(45deg)
+}
+
+#navMenu.active>span:nth-child(2) {
+    width: 0;
+}
+
+#navMenu.active>span:nth-child(1),
+#navMenu.active>span:nth-child(3) {
+    transition-delay: .4s;
+}
+
+#navMenu.active>span:nth-child(1) {
+    transform: translateY(9px);
+}
+
+#navMenu.active>span:nth-child(3) {
+    transform: translateY(-9px) rotate(90deg);
+}
+
+
+/* Navbar Style Starting */
+
+header nav .navbar {
+    padding: 12px 45px;
+    background-color: #000;
+    justify-content: space-between !important;
+    box-shadow: inset -1px -1px 1px 0px grey;
+}
+header nav .navbar-brand {
+    color: white !important;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+header nav .navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+header nav .navbar .navbar-nav {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+header nav .navbar .navbar-nav li a {
+    color: #fff !important;
+    font-weight: 500;
+    transition: 500ms ease;
+}
+
+header nav .navbar .navbar-nav li a:hover {
+    padding-bottom: 2px;
+    box-sizing: border-box !important;
+    color: coral !important;
+}
+
+/* Header Text starting style */
+header .header-text {
+    padding: 0 45px;
+}
+
+header .header-text .left-page {
+    margin-top: 150px;
+}
+
+header .header-text .left-page .header-title h1 {
+    font-size: 45px;
+    color: #fff;
+}
+header .header-text .left-page p{
+    color: #AAAAAA;
+}
+
+header .header-text .left-page button {
+    background-color: #AAA;
+    border-radius: 8px;
+    border: none;
+    padding: 15px 52px;
+    margin: 15px 0;
+}
+
+header .header-text .left-page button a {
+    color: #000;
+    font-weight: 500;
+}
+
+header .header-text .left-page button a:hover {
+    text-decoration: none;
+}
+
+header .header-text .left-page .app-icon a {
+    margin-right: 30px;
+    font-size: 22px;
+    color: #fff;
+}
+
+header .header-text .right-page .alert {
+    padding: 0;
+    margin: 0;
+}
+
+header .header-text .right-page .alert p {
+    display: inline-block;
+    padding: 5px 35px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+header .header-text .right-page img {
+    position: relative;
+    left: 150px;
+    top: 50px;
+    transform: scale(1.4);
+}
+
+
+/* media Query starting */
+
+/* Header Page */
+                                                                  /* Max 1400px */
+@media (max-width:1400px){
+    header .header-text .left-page .header-title h1 {
+        font-size: 36px;
+    }
+    header .header-text .left-page {
+        margin-top: 100px;
+    }
+}
+
+                                                                  /* Max 1200px */
+@media (max-width:1200px) {
+    header nav .navbar .navbar-nav li a {
+        font-size: 15px;
+    }
+    header .header-text .left-page .header-title h1 {
+        font-size: 33px;
+    }
+    header .header-text .right-page img {
+        left: 0px;
+        top: 30px;
+        transform: scale(1.2);
+    }
+
+
+}
+
+
+
+/* Max 992px */
+@media (max-width:992px) {
+    header .collapse:not(.show) {
+        display: block;
+    }
+    header .navbar-nav{
+        flex-direction: row;
+    }
+    header .header-text .left-page .header-title h1 {
+        font-size: 25px;
+    }
+    header .header-text .right-page .alert p {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+}
+
+
+/* Max 768px  */
+
+@media (max-width:768px) {
+    header nav .navbar{
+        padding: 12px 22px;
+    }
+    header nav .navbar .navbar-nav li a {
+        font-size: 13px;
+    }
+}
+
+/* Max 576px */
+@media (max-width:576px) {
+    header .collapse:not(.show) {
+        display: none;
+    }
+    header .navbar-nav {
+        flex-direction: column;
+    }
+    header .header-text .left-page button {
+        padding: 10px 22px;
+    }
+}
